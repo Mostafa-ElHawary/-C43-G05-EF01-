@@ -11,6 +11,7 @@ namespace C43_G05_EF01.Entities
         [MaxLength(100)]
         public string Title { get; set; }
         
+        [Range(1, 10)]
         public int Credits { get; set; }
     }
 }

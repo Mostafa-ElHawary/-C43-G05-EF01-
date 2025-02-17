@@ -33,16 +33,23 @@ namespace C43_G05_EF01.Entities
     internal class Employee
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
+
+        [Range(18, 65)]
         public int Age { get; set; }
-        public double Salary { get; set; }
-        public string Adress { get; set; }
 
-        public DateTime DateOfCreation { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal Salary { get; set; }
 
-
-
+        [MaxLength(100)]
+        public string Address
+        {
+            get; set;
+        }
     }
 }
