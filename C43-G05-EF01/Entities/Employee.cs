@@ -9,11 +9,6 @@ using System.Threading.Tasks;
 namespace C43_G05_EF01.Entities
 {
 
-    // EF Core Support 4 Ways To Mapping Class In Databases [Table , View , Function]
-    // 1- By Convention Way ---> Default behaviour
-    // 2- Data Annoation [Set Of Attributes Used for Data Validation]
-
-
     //internal class Employee
     //{
 
@@ -30,26 +25,41 @@ namespace C43_G05_EF01.Entities
     //}
 
     // 2- Data Annoation 
-    internal class Employee
+    //internal class Employee
+    //{
+    //    [Key]
+    //    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    //    public int Id { get; set; }
+
+    //    [Required]
+    //    [MaxLength(50)]
+    //    public string Name { get; set; }
+
+    //    [Range(18, 65)]
+    //    public int Age { get; set; }
+
+    //    [Column(TypeName = "decimal(18,2)")]
+    //    public decimal Salary { get; set; }
+
+    //    [MaxLength(100)]
+    //    public string Address
+    //    {
+    //        get; set;
+    //    }
+    //}
+
+    // 3- Fluent API
+
+    class Employee
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
-        [MaxLength(50)]
         public string Name { get; set; }
 
-        [Range(18, 65)]
         public int Age { get; set; }
 
-        [Column(TypeName = "decimal(18,2)")]
         public decimal Salary { get; set; }
 
-        [MaxLength(100)]
-        public string Address
-        {
-            get; set;
-        }
+        public string Address { get; set; }
     }
 }
